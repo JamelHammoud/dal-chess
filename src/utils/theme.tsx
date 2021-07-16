@@ -1,5 +1,7 @@
+import '../fonts/index.css'
+
 export const theme = {
-  fontFamily1: '"Nunito Sans", sans-serif',
+  fontFamily1: '"Circular", sans-serif',
 
   background: '#FFFFFF',
   foreground: '#000000',

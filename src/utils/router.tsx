@@ -5,8 +5,14 @@ const App = {
   signin: '/signin'
 }
 
+const Admin = {
+  createEvent: '/create/event',
+  createPost: '/create/post'
+}
+
 const ROUTES = {
-  App
+  App,
+  Admin
 }
 
 export default ROUTES

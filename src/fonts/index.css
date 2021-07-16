@@ -1,0 +1,25 @@
+/* Circular */
+
+@font-face {
+  font-family: 'Circular';
+  font-weight: 400;
+  src: local('Circular'), url(./Circular/circular-book.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'Circular';
+  font-weight: 500;
+  src: local('Circular'), url(./Circular/circular-medium.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'Circular';
+  font-weight: 600;
+  src: local('Circular'), url(./Circular/circular-bold.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'Circular';
+  font-weight: 700;
+  src: local('Circular'), url(./Circular/circular-black.otf) format('opentype');
+}

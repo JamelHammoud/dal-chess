@@ -1,36 +1,30 @@
-import React, { FC, useState } from 'react'
+import { FC, useContext, useState } from 'react'
 import { useHistory } from 'react-router-dom'
-import firebase from 'firebase'
-import { config } from '../Firebase/config'
+import { firebaseStore } from '../../providers/FirebaseProvider'
 import { StyledSignIn } from '.'
 
 const SignIn: FC = () => {
+  const { auth } = useContext(firebaseStore)
   const history = useHistory()
 
   const [inputEmail, setInputEmail] = useState("")
   const [inputPassword, setInputPassword] = useState("")
 
-  const signIn = () => {
-    (!firebase.apps.length) ? firebase.initializeApp(config) : firebase.app()
-    const auth = firebase.auth()
+  const SignInUser = async () => {
+    const status = await auth!.signInWithEmailAndPassword(inputEmail, inputPassword)
 
-    auth.signInWithEmailAndPassword(inputEmail, inputPassword)
-    .then(() => {
+    if (status.user) {
       history.push('/')
-    })
-    .catch((error) => {
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      alert(errorMessage)
-    })
+    }
 
+    console.log(status)
   }
 
   return (
     <StyledSignIn>
       <input type="email" placeholder="Email address" onChange={(e) => setInputEmail(e.currentTarget.value)} />
       <input type="password" placeholder="Password" onChange={(e) => setInputPassword(e.currentTarget.value)} />
-      <button onClick={ signIn }>Sign In</button>
+      <button onClick={() => SignInUser()}>Sign In</button>
     </StyledSignIn>
   )
 }

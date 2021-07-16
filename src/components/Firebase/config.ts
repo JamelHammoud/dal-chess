@@ -1,9 +1,10 @@
 export const config = {
-  apiKey: "AIzaSyDfH8XoHF_0NAtsRiht7mz1Y6M73Ye2oZ4",
-  authDomain: "boiler-efd44.firebaseapp.com",
-  databaseURL: "https://boiler-efd44-default-rtdb.firebaseio.com",
-  projectId: "boiler-efd44",
-  storageBucket: "boiler-efd44.appspot.com",
-  messagingSenderId: "691427256056",
-  appId: "1:691427256056:web:8c22f6b87c13610422bd0d"
+  apiKey: "AIzaSyD-Y0nZt4dS_i-9xcoKPlgx5DuS70agMLE",
+  authDomain: "dal-chess.firebaseapp.com",
+  databaseURL: "https://dal-chess-default-rtdb.firebaseio.com",
+  projectId: "dal-chess",
+  storageBucket: "dal-chess.appspot.com",
+  messagingSenderId: "776040676299",
+  appId: "1:776040676299:web:571a148cd23e195253544e",
+  measurementId: "G-FVWWEQB6N0"
 }
