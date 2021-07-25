@@ -1,2 +1,2 @@
 export { default as SignUp } from './SignUp'
-export { default as StyledSignUp } from './SignUp.Styled'
+export { default as StyledAuth } from './Auth.Styled'

@@ -1,6 +1,7 @@
 import firebase from 'firebase'
 
 type EventType = {
+  id: string;
   category: string;
   title: string;
   createdBy: string;

@@ -2,7 +2,12 @@ const App = {
   home: '/',
   routerTest: '/router',
   signup: '/signup',
-  signin: '/signin'
+  signin: '/signin',
+  inputMatch: '/match',
+  matches: '/matches',
+  calendar: '/calendar',
+  leaderboard: '/leaderboard',
+  editProfile: '/edit/profile'
 }
 
 const Admin = {

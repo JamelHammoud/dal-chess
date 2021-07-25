@@ -1,6 +1,6 @@
 import { FC, useContext, useEffect, useState } from 'react'
 import { firebaseStore } from '../../providers/FirebaseProvider'
-import { EventType, PostType } from '../../types'
+import { EventType, PostType, UserType } from '../../types'
 import { FeedPost } from '../FeedPost'
 import { StyledFeedGrid } from '.'
 
@@ -11,40 +11,41 @@ const FeedGrid: FC = () => {
   const eventsDB = firestore!.collection('events')
 
   const [posts, setPosts] = useState<PostType[]>([])
+  const [postFeeder, setPostFeeder] = useState<PostType>()
   const [events, setEvents] = useState<EventType[]>([])
 
   const loadPosts = async () => {
-    
-    /*
-
     return postsDB
     .orderBy('createdAt', 'desc')
     .onSnapshot(({ docs }) => {
-      docs.map((post) => ({
+      setPosts(docs.map((post) => ({
         id: post.id,
-        user: await loadPostUser(post.data().createdBy)
         ...post.data()
-      })) as PostType[]
-    })
-    
+      }) as PostType))
       
-      return usersDB.get()
-        .onSnapshot(({ docs }) => {
-          setPosts(docs.map((post) => ({
-            id: post.id,
-            ...post.data()
-          })) as PostType[])
-        })
-        */
-  }
-
-  const loadPostUser = async (user: string) => {
-    return 'hi'
+      /*
+      docs.forEach(async (data) => {
+        const preparePost: PostType = {
+          id: data.id,
+          ...data.data()
+        }
+        const postUser = await usersDB.doc(data.data().createdBy).get()
+        preparePost.user = postUser.data() as UserType
+        setPostFeeder(preparePost)
+      })
+      */
+    })
   }
 
   useEffect(() => {
     loadPosts()
   }, [])
+
+  useEffect(() => {
+    if (postFeeder && !posts.includes(postFeeder)) {
+      setPosts([...posts, postFeeder])
+    }
+  }, [postFeeder])
 
   return (
     <StyledFeedGrid>

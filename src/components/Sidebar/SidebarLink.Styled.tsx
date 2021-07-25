@@ -14,6 +14,11 @@ const StyledSidebarLink = styled(Link)<StyledProps>`
   cursor: pointer;
   text-decoration: none;
   background: ${({isActive}) => isActive ? '#F3F4F6' : 'transparent'};
+  transition: 0.2s;
+
+  &:hover {
+    background: #F3F4F6;
+  }
 
   .icon {
     height: 24px;

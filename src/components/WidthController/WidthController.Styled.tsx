@@ -5,6 +5,7 @@ const StyledWidthController = styled.div`
   width: 100%;
   padding: 40px 1rem;
   margin: 0 auto;
+  box-sizing: border-box;
 `
 
 export default StyledWidthController

@@ -1,4 +1,5 @@
 import firebase from 'firebase'
+import UserType from './UserType'
 
 type FirebaseProviderType = {
   auth?: firebase.auth.Auth;
@@ -6,6 +7,7 @@ type FirebaseProviderType = {
   storage?: firebase.storage.Storage;
   realtime?: firebase.database.Database;
   user?: firebase.User | null;
+  userDetails?: UserType;
 }
 
 export default FirebaseProviderType

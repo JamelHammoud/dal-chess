@@ -40,7 +40,6 @@ const CreateEvent: FC = () => {
         <div className="input-container">
           <span className="input-label">Event date and time</span>
           <input 
-            value={eventDate?.toDate().toISOString().slice(0,16)}
             onChange={(e) => setEventDate(firebase.firestore.Timestamp.fromDate(new Date(e.currentTarget.value)))}
             type="datetime-local"
           />
@@ -53,7 +52,7 @@ const CreateEvent: FC = () => {
             <option value="event">Event</option>
           </select>
         </div>
-        <Button onClick={() => createEvent()}>Create Event</Button>
+        <Button className="submit-btn" onClick={() => createEvent()}>Create Event</Button>
       </StyledAdminCreate>
     </WidthController>
   )

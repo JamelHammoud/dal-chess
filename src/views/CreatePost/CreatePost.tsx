@@ -33,7 +33,7 @@ const CreatePost: FC = () => {
             onChange={(e) => setPostContent(e.currentTarget.value)}
           ></textarea>
         </div>
-        <Button onClick={() => createPost()}>Create Post</Button>
+        <Button className="submit-btn" onClick={() => createPost()}>Create Post</Button>
       </StyledAdminCreate>
     </WidthController>
   )

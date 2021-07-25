@@ -4,10 +4,11 @@ import { StyledButton } from '.'
 type Props = {
   children?: ReactNode;
   className?: string;
+  isDisabled?: boolean;
   onClick?: (param?: any) => void;
 }
 
-const Button: FC<Props> = ({ children, className, onClick }) => {
+const Button: FC<Props> = ({ children, className, isDisabled, onClick }) => {
 
   const handleChange = () => {
     if (onClick) {
@@ -17,6 +18,7 @@ const Button: FC<Props> = ({ children, className, onClick }) => {
 
   return (
     <StyledButton 
+      disabled={isDisabled}
       className={className} 
       onClick={() => handleChange()}
     >

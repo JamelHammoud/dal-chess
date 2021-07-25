@@ -1,28 +1,13 @@
-import { FC, useEffect, useContext, useState } from 'react'
+import { FC, useContext } from 'react'
 import { firebaseStore } from '../../providers/FirebaseProvider'
-import { UserType } from '../../types/'
 import { WidthController } from '../../components/WidthController'
 import { UpcomingEvent } from '../../components/UpcomingEvent'
 import { FeedGrid } from '../../components/FeedGrid'
+import { MatchRequest } from '../../components/MatchRequest'
 import { StyledDashboard } from '.'
 
 const Dashboard: FC = () => {
-  const { user, firestore } = useContext(firebaseStore)
-  const usersDB = firestore!.collection('users')
-
-  const [userRanking, setUserRanking] = useState(0)
-
-  const getUserRanking = async () => {
-    const data = await usersDB.doc(user?.uid).get()
-    const userDetails = data.data() as UserType
-    setUserRanking(userDetails.ranking)
-  }
-
-  useEffect(() => {
-    if (user) {
-      getUserRanking()
-    }
-  }, [user])
+  const { userDetails } = useContext(firebaseStore)
 
   return (
     <WidthController>
@@ -31,9 +16,10 @@ const Dashboard: FC = () => {
           <h1>Dashboard</h1>
           <div className="ranking">
             <span>Rank</span>
-            <h2>{userRanking}</h2>
+            <h2>{userDetails?.ranking}</h2>
           </div>
         </div>
+        <MatchRequest/>
         <UpcomingEvent/>
         <FeedGrid/>
       </StyledDashboard>
