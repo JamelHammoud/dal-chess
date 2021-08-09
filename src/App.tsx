@@ -18,6 +18,7 @@ import { Matches } from './views/Matches'
 import { Leaderboard } from './views/Leaderboard'
 import { Calendar } from './views/Calendar'
 import { EditProfile } from './views/EditProfile'
+import { Post } from './views/Post'
 
 export default function App() {
   return (
@@ -36,6 +37,7 @@ export default function App() {
               <Route exact path={ROUTES.App.leaderboard} component={Leaderboard} />
               <Route exact path={ROUTES.App.calendar} component={Calendar} />
               <Route exact path={ROUTES.App.editProfile} component={EditProfile} />
+              <Route path={ROUTES.App.post} component={Post}/>
 
               <Route path={ROUTES.Admin.createEvent} component={CreateEvent} />
               <Route path={ROUTES.Admin.createPost} component={CreatePost} />

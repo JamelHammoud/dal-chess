@@ -7,7 +7,8 @@ const App = {
   matches: '/matches',
   calendar: '/calendar',
   leaderboard: '/leaderboard',
-  editProfile: '/edit/profile'
+  editProfile: '/edit/profile',
+  post: '/post/:postToken'
 }
 
 const Admin = {
