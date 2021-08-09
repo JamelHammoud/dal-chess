@@ -15,7 +15,7 @@ const LeaderboardItem: FC<Props> = ({ user }) => {
     <StyledLeaderboardItem>
       <div className="user-details">
         <Avatar hash={user.id!} name={user.name!}/>
-        <span className="user-name">{user.name === userDetails?.name ? 'You' : user.name}</span>
+        <span className="user-name">{user.id === userDetails?.id ? 'You' : user.name}</span>
       </div>
       <span className="user-ranking">{user.ranking}</span>
     </StyledLeaderboardItem>
